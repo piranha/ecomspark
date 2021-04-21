@@ -1,0 +1,2 @@
+run:
+	clj -M:cider
