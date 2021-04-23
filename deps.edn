@@ -10,10 +10,10 @@
   org.slf4j/slf4j-simple {:mvn/version "1.7.30"}}
 
  :aliases
- {:cider {:extra-deps {cider/cider-nrepl             {:mvn/version "0.26.0-SNAPSHOT"}
+ {:cider {:extra-deps {cider/cider-nrepl             {:mvn/version "0.26.0"}
                        refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}}
           :main-opts  ["-m" "nrepl.cmdline" "-i"
-                       "-Dorchard.fetch-java-sources-via-dynapath=false"
+                       ;;"-J-Dorchard.fetch-java-sources-via-dynapath=false"
                        "--middleware"
                        "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
 
