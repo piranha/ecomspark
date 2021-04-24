@@ -26,7 +26,6 @@
 
 
 (defn ProductList [{:keys [products offset cart?]}]
-  (prn products)
   (hi/html
     [:div#products.columns
      (for [p products]

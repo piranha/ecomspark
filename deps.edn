@@ -4,7 +4,7 @@
   ring/ring-core         {:mvn/version "1.9.2"}
   ring/ring-json         {:mvn/version "0.5.1"}
   http-kit/http-kit      {:mvn/version "2.5.3"}
-  hiccup/hiccup          {:mvn/version "2.0.0-alpha2"}
+  hiccup/hiccup          {:mvn/version "1.0.5"}
   mount/mount            {:mvn/version "0.1.16"}
   org.slf4j/slf4j-api    {:mvn/version "1.7.30"}
   org.slf4j/slf4j-simple {:mvn/version "1.7.30"}}

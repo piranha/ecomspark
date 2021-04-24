@@ -56,8 +56,7 @@
 (defn cart [{:keys [session]}]
   (let [cart (:cart session)]
     {:status  200
-     :body    {:cart  cart
-               :count (count cart)
+     :body    {:count    (count cart)
                :products (mapv get-product cart)}
      :partial cart/HeaderCart
      :page    pages/Cart}))

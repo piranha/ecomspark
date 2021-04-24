@@ -3,13 +3,13 @@
             [ring.util.codec :as codec]))
 
 
-(defn HeaderCart [body]
+(defn HeaderCart [opts]
   (hi/html
-    (if (:count body)
+    (if (:count opts)
       [:a#cart.btn.btn-link {:href         "/cart"
                              :ts-swap-push "#cart"}
-       (when (pos? (:count body))
-         [:span.chip (:count body)])
+       (when (pos? (:count opts))
+         [:span.chip (:count opts)])
        "Cart"]
       [:a#cart.btn.btn-link {:href       "/cart"
                              :ts-req     "/cart"
