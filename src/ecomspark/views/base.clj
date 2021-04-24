@@ -36,10 +36,10 @@
 (defn wrap [title content]
   (hi/html (:html5 hiccup.page/doctype)
     [:html
-     (Head title)
+     (Head title) ;;; <-- title
      [:body.container {}
       [:div.columns
        [:div {:class "column col-6 col-xl-8 col-lg-10 col-md-12 col-mx-auto"}
         (Nav)
-        content
+        content ;;; <-- content
         (Footer)]]]]))

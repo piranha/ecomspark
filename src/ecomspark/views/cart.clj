@@ -11,6 +11,7 @@
        (when (pos? (:count opts))
          [:span.chip (:count opts)])
        "Cart"]
+
       [:a#cart.btn.btn-link {:href       "/cart"
                              :ts-req     "/cart"
                              :ts-trigger "load"}
