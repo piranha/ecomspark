@@ -13,6 +13,9 @@
      [:link {:rel  "stylesheet"
              :href "/static/spectre.css"}]
      [:script {:src "/static/twinspark.js"}]
+     [:style "
+       .fade {opacity: 0; transition: opacity 0.5s ease-in-out; }
+     "]
      [:title {} title]]))
 
 

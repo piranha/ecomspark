@@ -34,8 +34,12 @@
 
 (defn RemoveResult [opts]
   (hi/html
-    [:div {:ts-action "remove"
-           :ts-trigger "load"}]
+    [:button.btn.btn-primary
+     {:disabled   true
+      :ts-action  "class+ fade, wait transitionend, remove"
+      :ts-target  "parent .product"
+      :ts-trigger "load"}
+     "Remove"]
     (HeaderCart {:count (:count opts)})))
 
 
@@ -43,6 +47,5 @@
   (hi/html
     [:button.btn.btn-primary {:ts-data       (codec/form-encode {:id id})
                               :ts-req        "/cart/add"
-                              :ts-req-method "delete"
-                              :ts-target     "parent .product"}
+                              :ts-req-method "delete"}
      "Remove"]))
