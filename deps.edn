@@ -1,7 +1,7 @@
 {:paths ["src" "resources"]
  :deps
  {org.clojure/clojure    {:mvn/version "1.10.3"}
-  ring/ring-core         {:mvn/version "1.9.2"}
+  ring/ring-core         {:mvn/version "1.9.3"}
   ring/ring-json         {:mvn/version "0.5.1"}
   http-kit/http-kit      {:mvn/version "2.5.3"}
   hiccup/hiccup          {:mvn/version "1.0.5"}
@@ -12,10 +12,10 @@
  :aliases
  {:cider {:extra-deps {cider/cider-nrepl             {:mvn/version "0.26.0"}
                        refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}}
-          :main-opts  ["-m" "nrepl.cmdline" "-i"
-                       ;;"-J-Dorchard.fetch-java-sources-via-dynapath=false"
-                       "--middleware"
-                       "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
+          :main-opts  ["-i" "dev/user.clj"
+                       "-m" "nrepl.cmdline"
+                       "-i"
+                       "--middleware" "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
 
-  :ancient {:extra-deps {antq/antq {:mvn/version "RELEASE"}}
+  :ancient {:extra-deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
             :main-opts  ["-m" "antq.core"]}}}
