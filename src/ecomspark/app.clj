@@ -1,5 +1,6 @@
 (ns ecomspark.app
   (:require [ring.middleware.resource :as resource-mw]
+            [ring.middleware.content-type :as ctype-mw]
             [ring.middleware.session :as session-mw]
             [ring.middleware.params :as params-mw]
             [ring.middleware.json :as json-mw]
@@ -127,4 +128,5 @@
              (json-mw/wrap-json-response)
              (params-mw/wrap-params)
              (session-mw/wrap-session)
-             (resource-mw/wrap-resource "public")))
+             (resource-mw/wrap-resource "public")
+             (ctype-mw/wrap-content-type)))
