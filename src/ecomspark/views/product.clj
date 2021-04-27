@@ -12,8 +12,7 @@
     [:div.product.column.col-3.col-xs-6.p-1
      [:div.card
       [:div.card-image
-       [:img.img-responsive {:style {:width        "100%"
-                                     :aspect-ratio "4 / 5"}
+       [:img.img-responsive {:style "width: 100%; aspect-ratio: 4/5"
                              :src   pic}]]
       [:div.card-header
        [:div.card-title.h5.columns
