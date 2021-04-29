@@ -7,7 +7,9 @@
 
 
 (mount/defstate httpd
-  :start (httpd/run-server app/app {:port 5454})
+  :start (do
+           (println "Starting HTTPd on :5454...")
+           (httpd/run-server app/app {:port 5454}))
   :stop  (httpd))
 
 
