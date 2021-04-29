@@ -5,8 +5,6 @@
             [ecomspark.views.cart :as cart]))
 
 
-;;; products
-
 (defn Product [{:keys [id pic price]} {:keys [cart?]}]
   (hi/html
     [:div.product.column.col-3.col-xs-6.p-1

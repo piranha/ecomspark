@@ -1,6 +1,5 @@
 (ns ecomspark.views.cart
-  (:require [hiccup.core :as hi]
-            [ring.util.codec :as codec]))
+  (:require [hiccup.core :as hi]))
 
 
 (defn HeaderCart [opts]
