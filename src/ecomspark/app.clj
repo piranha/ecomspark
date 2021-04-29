@@ -36,6 +36,9 @@
         {:status  200
          :session {:cart cart}
          :partial cart/BuyResult
+         :page    (fn [_]
+                    {:status  303
+                     :headers {"Location" "/cart"}})
          :body    {:success true
                    :cart    cart
                    :count   (count cart)}})
@@ -45,6 +48,9 @@
         {:status  200
          :session {:cart cart}
          :partial cart/RemoveResult
+         :page    (fn [_]
+                    {:status  303
+                     :headers {"Location" "/cart"}})
          :body    {:success true
                    :cart    cart
                    :count   (count cart)}})
@@ -79,9 +85,11 @@
 
 (defn render-request [func res]
   (let [html (func (:body res))]
-    (-> res
-        (update :headers assoc "Content-Type" "text/html; charset=UTF-8")
-        (assoc :body html))))
+    (if (map? html)
+      (merge res html)
+      (-> res
+          (update :headers assoc "Content-Type" "text/html; charset=UTF-8")
+          (assoc :body html)))))
 
 
 (defn accepts? [req accept]
