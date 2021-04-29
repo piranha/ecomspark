@@ -27,10 +27,11 @@
 
 (defn Buy [id]
   (hi/html
-    [:button.btn.btn-primary {:ts-data       (codec/form-encode {:id id})
-                              :ts-req        "/cart/add"
-                              :ts-req-method "post"}
-     "Buy"]))
+    [:form {:method "post"
+            :action "/cart/add"
+            :ts-req ""}
+     [:input {:type "hidden" :name "id" :value id}]
+     [:button.btn.btn-primary "Buy"]]))
 
 
 (defn RemoveResult [opts]
@@ -45,7 +46,10 @@
 
 (defn Remove [id]
   (hi/html
-    [:button.btn.btn-primary {:ts-data       (codec/form-encode {:id id})
-                              :ts-req        "/cart/add"
-                              :ts-req-method "delete"}
-     "Remove"]))
+    [:form {:method        "post"
+            :action        "/cart/add"
+            :ts-req        ""
+            :ts-req-method "delete"}
+     [:input {:type "hidden" :name "_method" :value "delete"}]
+     [:input {:type "hidden" :name "id" :value id}]
+     [:button.btn.btn-primary "Remove"]]))

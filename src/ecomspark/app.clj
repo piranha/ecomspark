@@ -105,6 +105,15 @@
         res))))
 
 
+(defn methods-mw [handler]
+  (fn [{:keys [request-method form-params] :as req}]
+    (if (and (= request-method :post)
+             (contains? form-params "_method"))
+      (let [method (keyword (get form-params "_method"))]
+        (handler (assoc req :request-method method)))
+      (handler req))))
+
+
 ;;; HTTP handler
 
 (defn h404 [_req]
@@ -125,6 +134,7 @@
 
 (def app (-> -app
              (twinspark-mw)
+             (methods-mw)
              (json-mw/wrap-json-response)
              (params-mw/wrap-params)
              (session-mw/wrap-session)
