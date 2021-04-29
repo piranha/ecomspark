@@ -14,6 +14,7 @@
  {:cider {:extra-deps {cider/cider-nrepl             {:mvn/version "0.26.0"}
                        refactor-nrepl/refactor-nrepl {:mvn/version "2.5.1"}}
           :main-opts  ["-i" "dev/user.clj"
+                       "-e" "(start)"
                        "-m" "nrepl.cmdline"
                        "-i"
                        "--middleware" "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
