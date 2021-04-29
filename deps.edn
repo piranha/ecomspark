@@ -1,13 +1,14 @@
 {:paths ["src" "resources"]
  :deps
  {org.clojure/clojure    {:mvn/version "1.10.3"}
+  org.slf4j/slf4j-api    {:mvn/version "1.7.30"}
+  org.slf4j/slf4j-simple {:mvn/version "1.7.30"}
+  mount/mount            {:mvn/version "0.1.16"}
+
   ring/ring-core         {:mvn/version "1.9.3"}
   ring/ring-json         {:mvn/version "0.5.1"}
   http-kit/http-kit      {:mvn/version "2.5.3"}
-  hiccup/hiccup          {:mvn/version "1.0.5"}
-  mount/mount            {:mvn/version "0.1.16"}
-  org.slf4j/slf4j-api    {:mvn/version "1.7.30"}
-  org.slf4j/slf4j-simple {:mvn/version "1.7.30"}}
+  hiccup/hiccup          {:mvn/version "1.0.5"}}
 
  :aliases
  {:cider {:extra-deps {cider/cider-nrepl             {:mvn/version "0.26.0"}
