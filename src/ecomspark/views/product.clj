@@ -30,8 +30,8 @@
      (for [p products]
        (Product p {:cart? cart?}))
      (when offset
-       [:div.column.col-12 {:ts-req          "/"
-                            :ts-req-selector "children #products"
-                            :ts-data         (codec/form-encode {:offset offset})
-                            :ts-trigger      "visible"}
-        "PAGINATION"])]))
+       [:a.column.col-12 {:href            (str "/?" (codec/form-encode {:offset offset}))
+                          :ts-trigger      "visible"
+                          :ts-req          ""
+                          :ts-req-selector "children #products"}
+        "Next page >>"])]))
