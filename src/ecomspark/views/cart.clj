@@ -5,7 +5,7 @@
 
 (defn HeaderCart [opts]
   (hi/html
-    (if (:count opts)
+    (if opts
       [:a#cart.btn.btn-link {:href         "/cart"
                              :ts-swap-push "#cart"}
        (when (pos? (:count opts))
@@ -37,9 +37,8 @@
   (hi/html
     [:button.btn.btn-primary
      {:disabled   true
-      :ts-action  "class+ fade, wait transitionend, remove"
-      :ts-target  "parent .product"
-      :ts-trigger "load"}
+      :ts-trigger "load"
+      :ts-action  "target 'parent .product', class+ fade, wait transitionend, remove"}
      "Remove"]
     (HeaderCart {:count (:count opts)})))
 
