@@ -1,4 +1,4 @@
-{:paths ["src" "resources"]
+{:paths ["src" "resources" "classes"]
  :deps
  {org.clojure/clojure    {:mvn/version "1.10.3"}
   org.slf4j/slf4j-api    {:mvn/version "1.7.30"}
@@ -20,4 +20,7 @@
                        "--middleware" "[cider.nrepl/cider-middleware,refactor-nrepl.middleware/wrap-refactor]"]}
 
   :ancient {:extra-deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
-            :main-opts  ["-m" "antq.core"]}}}
+            :main-opts  ["-m" "antq.core"]}
+  :uberjar {:replace-deps {uberdeps/uberdeps {:mvn/version "1.0.4"}}
+            :main-opts ["-m" "uberdeps.uberjar"]
+            :exec-args {:aot true}}}}

@@ -1,0 +1,18 @@
+FROM clojure:tools-deps as builder
+
+RUN mkdir /tmp/ecomspark
+
+WORKDIR /tmp/ecomspark
+
+copy deps.edn Makefile ./
+COPY src ./src
+COPY resources ./resources
+
+RUN make uberjar
+
+
+FROM adoptopenjdk/openjdk11 as runner
+
+COPY --from=builder /tmp/ecomspark/target/ecomspark.jar ./
+
+ENTRYPOINT ["java","-jar","./ecomspark.jar"]

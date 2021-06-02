@@ -6,10 +6,15 @@
             [ecomspark.app :as app]))
 
 
+(def default-port 5454)
+
 (mount/defstate httpd
-  :start (do
-           (println "Starting HTTPd on :5454...")
-           (httpd/run-server app/app {:port 5454}))
+  :start (let [port (or (some->> "PORT" System/getenv Integer/parseInt)
+                        default-port)]
+           (printf "Starting HTTPd on :%s...\n" port)
+           (flush)
+           (httpd/run-server app/app {:port port})
+           (println "Done!"))
   :stop  (httpd))
 
 

@@ -2,4 +2,7 @@
 /.cpcache
 /classes
 /target
-/.clj-kondo/.cache
+/.clj-kondo
+/heroku.yml
+/app.json
+
