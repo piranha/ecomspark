@@ -8,3 +8,4 @@ add a product to cart and so on.
 ## Variants
 
 - [Python+Flask](https://github.com/vsolovyov/ecomspark-flask/)
+- [Java](https://github.com/taraskovaliv/econspark-java/)
